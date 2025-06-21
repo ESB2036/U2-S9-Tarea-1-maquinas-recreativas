@@ -1,0 +1,203 @@
+.recaudacion-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ccc;
+    font-family: Arial, sans-serif;
+  }
+  
+  .recaudacion-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .recaudacion-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .recaudacion-form input,
+  .recaudacion-form select,
+  .recaudacion-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .recaudacion-form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #228b22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .recaudacion-form button:hover {
+    background-color: #1e6e1e;
+  }
+  
+  .mensaje {
+    margin-bottom: 15px;
+    padding: 10px;
+    display: none;
+    border-radius: 6px;
+  }
+  
+  .mensaje.ok {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .mensaje.error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+/* Estilo para el botón Detalles Informe */
+#btnDetallesInforme {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: none; /* Inicia oculto */
+  transition: background-color 0.3s;
+}
+
+#btnDetallesInforme:hover {
+  background-color: #0056b3;
+}
+
+#detalleInformeContainer {
+  display: none;
+  margin-top: 20px;
+}
+/*Para el modal de informes*/
+/* recaudacion.css (adiciones) */
+.components-table {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.components-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.components-table th, 
+.components-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.components-table th {
+  background-color: #f2f2f2;
+}
+
+.total-row {
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
+/* Estilos para el modal de informe */
+.informe-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.informe-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.informe-content {
+  font-family: Arial, sans-serif;
+}
+
+.informe-section {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.tecnico-info {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.informe-totals {
+  margin: 25px 0;
+  padding: 15px;
+  background-color: #f0f8ff;
+  border-radius: 5px;
+}
+
+.grand-total {
+  font-size: 1.2em;
+  color: #2a6496;
+  margin-top: 10px;
+}
+
+.informe-footer {
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.informe-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .informe-modal, .informe-modal * {
+    visibility: visible;
+  }
+  .informe-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 20px;
+    box-shadow: none;
+  }
+  .informe-actions {
+    display: none;
+  }
+}

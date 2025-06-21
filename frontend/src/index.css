@@ -1,0 +1,655 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url("/frontend/imagenes/bg1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: "Arial", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Estilos para formularios de autenticación */
+.auth-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #747bff;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #747bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #5a62e0;
+}
+
+.submit-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff4d4d;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(255, 77, 77, 0.1);
+  border-radius: 4px;
+}
+
+.success-message {
+  color: #56e335;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(86, 227, 53, 0.1);
+  border-radius: 4px;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #aaa;
+}
+
+.auth-links a {
+  color: #747bff;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el dashboard */
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.dashboard-container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.dashboard-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-section {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section p {
+  margin-bottom: 0.5rem;
+}
+
+.machines-section {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.actions-section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Estilos para listas de máquinas */
+.machine-list {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.machine-list h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.machine-list ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.li-maquina {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #333;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.li-maquina:hover {
+  background-color: #3a3a3a;
+}
+
+.li-maquina.selected {
+  border-left: 3px solid #747bff;
+}
+
+.li-maquina-content {
+  display: block;
+}
+
+.span-comercio-details {
+  margin-left: 10px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Estilos para notificaciones */
+.notifications-section {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.notifications-section h2 {
+  cursor: pointer;
+}
+
+.notificacion-item {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.notificacion-item:hover {
+  background-color: #333;
+}
+
+.notificacion-item.no-leida {
+  background-color: rgba(0, 119, 255, 0.1);
+  border-left: 3px solid #07f;
+}
+
+.notificacion-content {
+  color: #aaa;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+/* Estilos para modales */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.message-modal {
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.message-modal textarea {
+  width: 100%;
+  min-height: 100px;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: inherit;
+  font-family: inherit;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-actions button {
+  margin-right: 10px;
+  border-color: #2a2a2a;
+}
+
+/* Estilos para botones */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #747bff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.primary-btn {
+  background-color: #747bff;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #5a62e0;
+}
+
+.danger-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.danger-btn:hover {
+  background-color: #e04444;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Media queries para modo claro */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  .auth-container,
+  .profile-section,
+  .machines-section,
+  .notifications-section,
+  .modal-content,
+  .message-modal {
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .machine-list,
+  .li-maquina,
+  .notificacion-item {
+    background-color: #eee;
+    border-color: #ddd;
+  }
+
+  .span-comercio-details,
+  .notificacion-content {
+    color: #666;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/*...............Estilos......................................*/
+
+/* Header styles */
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+header h1 {
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+header nav {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #0056b3;
+}
+
+header nav button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+header nav button:hover {
+  background-color: #0056b3;
+}
+
+/* Main content styles */
+.pantalla_completa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px; /* Adjusted for header */
+}
+
+.contenedor_todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.caja_trasera {
+  flex: 1;
+  max-width: 400px;
+  margin-right: 50px;
+}
+
+.caja_trasera_login {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.caja_trasera_login h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.caja_trasera_login p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.caja_trasera_login button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.caja_trasera_login button:hover {
+  background-color: #0056b3;
+}
+
+/* Form styles */
+.contenedor_login_register {
+  flex: 1;
+  max-width: 400px;
+}
+
+.formulario_login {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formulario_login h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.formulario_login input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.formulario_login button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.formulario_login button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.enlaces_recuperacion {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.enlaces_recuperacion a {
+  color: #007bff;
+  font-size: 0.9em;
+  text-decoration: underline;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.enlaces_recuperacion a:hover {
+  color: #0056b3;
+}
+
+.error-campo {
+  color: #dc3545;
+  font-size: 0.8em;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 850px) {
+  .contenedor_todo {
+    flex-direction: column;
+  }
+
+  .caja_trasera {
+    margin-right: 0;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  .caja_trasera_login {
+    display: none;
+  }
+
+  .formulario_login {
+    width: 100%;
+  }
+}
+
+/* React app container */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-modal {
+  background-color: #eee;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-right: 0.75rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.checklist-item label {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-buttons button {
+  flex: 1;
+  padding: 0.75rem;
+}

@@ -1,0 +1,84 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.pantalla_completa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  background-image: url("/frontend/imagenes/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.contenedor_todo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.caja_trasera {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.caja_trasera_login {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.contenedor_login_register {
+  flex: 1;
+  max-width: 400px;
+}
+
+.formulario_login {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.error-message {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 850px) {
+  .contenedor_todo {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .caja_trasera {
+    display: none;
+  }
+  
+  .formulario_login {
+    width: 100%;
+  }
+}

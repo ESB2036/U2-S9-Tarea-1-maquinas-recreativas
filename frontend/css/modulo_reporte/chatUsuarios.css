@@ -1,0 +1,262 @@
+/* Estructura principal del chat */
+.chat-container {
+  display: flex;
+  height: calc(100vh - 100px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Modos de visualización (panel/ventana) */
+.chat-container.panel-mode {
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.chat-container.window-mode {
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Sección de contactos */
+.contactos {
+  width: 300px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.contactos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactos li {
+  padding: 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.contactos li:hover {
+  background-color: #f5f5f5;
+}
+
+.contactos li.active {
+  background-color: #e3f2fd;
+}
+
+/* Información del contacto */
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.contacto-info strong {
+  font-size: 16px;
+}
+
+.contacto-info span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Usuarios del chat */
+.usuario-chat-item.activo {
+  background-color: #fffacd !important;
+  color: black !important;            
+  font-weight: bold;
+}
+
+.usuario-info small {
+  display: block;
+  color: #666;
+  font-size: 0.8em;
+  color: black;            
+
+}
+
+/* Sección de conversación */
+.conversacion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversacion-header {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.conversacion-header h3 {
+  margin: 0;
+}
+
+/* Área de mensajes */
+.mensajes {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+}
+
+.chat-mensajes {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+/* Estilos de mensajes individuales */
+.mensaje {
+  margin-bottom: 15px;
+  max-width: 70%;
+  padding: 8px;
+  border-radius: 4px;
+  color: black; /* Color de texto agregado */
+}
+
+.mensaje.enviado {
+  margin-left: auto;
+  background-color: #dcf8c6;
+  border-radius: 15px 15px 0 15px;
+  padding: 10px 15px;
+  color: black; /* Color de texto agregado */
+}
+
+.mensaje.recibido {
+  margin-right: auto;
+  background-color: white;
+  border-radius: 15px 15px 15px 0;
+  padding: 10px 15px;
+  border: 1px solid #eee;
+  color: black; /* Color de texto agregado */
+}
+
+.mensaje.emisor {
+  background-color: #e3f2fd;
+  margin-left: 20%;
+  text-align: right;
+  color: black; /* Color de texto agregado */
+}
+
+.mensaje.receptor {
+  background-color: #f1f1f1;
+  margin-right: 20%;
+  color: black; /* Color de texto agregado */
+}
+
+.mensaje-cabecera {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.mensaje-cabecera span {
+  color: #666;
+}
+
+/* Formulario de envío de mensajes */
+.mensaje-form {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.chat-form input,
+.mensaje-form textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+}
+
+.chat-form input {
+  height: auto;
+  padding: 8px;
+}
+
+.mensaje-form textarea {
+  height: 50px;
+}
+
+.chat-form button,
+.mensaje-form button {
+  margin-left: 10px;
+  padding: 0 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-form button:hover,
+.mensaje-form button:hover {
+  background-color: #45a049;
+}
+
+/* Estado cuando no hay contacto seleccionado */
+.selecciona-contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #666;
+}
+
+.no-chat-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #666;
+  font-size: 1.2em;
+}
+
+/* Lista de reportes */
+.reportes-list {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+.reportes-list select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.comentario-item {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+}
+
+.emisor {
+    background-color: #d1ffd1;
+    align-self: flex-end;
+}
+
+.receptor {
+    background-color: #f0f0ff;
+    align-self: flex-start;
+}
